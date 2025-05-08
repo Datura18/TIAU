@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "telegram-bot"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-telegram-bot = "21.2"
+schedule = "*"
+telegram = "^0.0.1"
+nest-asyncio = "^1.6.0"
+flask = "^3.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
