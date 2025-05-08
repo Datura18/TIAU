@@ -1,0 +1,22 @@
+name: Weekly Reminder
+
+on:
+  schedule:
+    - cron: '30 18 * * 3'  # چهارشنبه شب ساعت ۱۰ به وقت ایران
+  workflow_dispatch:
+
+jobs:
+  send_reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run reminder
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: python reminder.py
